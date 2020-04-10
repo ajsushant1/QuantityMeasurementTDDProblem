@@ -27,7 +27,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenReferenceToEqual_WhenEqual_ShouldReturnTrue() {
+    public void givenSameReferenceToFeet_WhenEqual_ShouldReturnTrue() {
         boolean equals = quantityMeasurement.equals(quantityMeasurement);
         Assert.assertTrue(equals);
     }
@@ -65,4 +65,9 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(quantityMeasurement.equals(null));
     }
 
+    @Test
+    public void givenSameReferenceToInch_WhenEqual_ShouldReturnTrue() {
+        boolean equals = quantityMeasurement.equals(quantityMeasurement);
+        Assert.assertTrue(equals);
+    }
 }
