@@ -175,14 +175,14 @@ public class QuantityMeasurementTest {
     public void givenInchAndCentimeterLength_ShouldReturnEqual() {
         double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH, 1);
         double centimeterValue = quantityMeasurement.getConversionValue(UnitType.CENTIMETER, 2.5);
-        Assert.assertEquals(inchValue,centimeterValue,0);
+        Assert.assertEquals(inchValue, centimeterValue, 0);
     }
 
     @Test
     public void given2InchAnd5CentimeterLength_ShouldReturnEqual() {
         double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH, 2);
         double centimeterValue = quantityMeasurement.getConversionValue(UnitType.CENTIMETER, 5);
-        Assert.assertEquals(inchValue,centimeterValue,0);
+        Assert.assertEquals(inchValue, centimeterValue, 0);
     }
 
     @Test
@@ -190,7 +190,7 @@ public class QuantityMeasurementTest {
         double inchValue1 = quantityMeasurement.getConversionValue(UnitType.INCH, 2);
         double inchValue2 = quantityMeasurement.getConversionValue(UnitType.INCH, 2);
         double quantity = quantityMeasurement.addQuantity(inchValue1, inchValue2);
-        Assert.assertEquals(4,quantity,0);
+        Assert.assertEquals(4, quantity, 0);
     }
 
     @Test
@@ -198,14 +198,14 @@ public class QuantityMeasurementTest {
         double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET, 1);
         double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH, 2);
         double quantity = quantityMeasurement.addQuantity(feetValue, inchValue);
-        Assert.assertEquals(14,quantity,0);
+        Assert.assertEquals(14, quantity, 0);
     }
 
     @Test
     public void given1FeetAnd1Feet_ShouldReturn24Inch() {
         double feetValue1 = quantityMeasurement.getConversionValue(UnitType.FEET, 1);
         double feetValue2 = quantityMeasurement.getConversionValue(UnitType.FEET, 1);
-        double quantity = quantityMeasurement.addQuantity(feetValue1,feetValue2);
+        double quantity = quantityMeasurement.addQuantity(feetValue1, feetValue2);
     }
 
     @Test
@@ -213,6 +213,13 @@ public class QuantityMeasurementTest {
         double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH, 2);
         double centimeterValue = quantityMeasurement.getConversionValue(UnitType.CENTIMETER, 2.5);
         double quantity = quantityMeasurement.addQuantity(inchValue, centimeterValue);
-        Assert.assertEquals(3,quantity,0);
+        Assert.assertEquals(3, quantity, 0);
+    }
+
+    @Test
+    public void givenGallonAndLitreVolume_ShouldReturnEqual() {
+        double gallonValue = quantityMeasurement.getConversionValue(UnitType.GALLON, 1);
+        double litreValue = quantityMeasurement.getConversionValue(UnitType.LITRE, 3.78);
+        Assert.assertEquals(gallonValue, litreValue, 0);
     }
 }
