@@ -5,15 +5,23 @@ import java.util.Objects;
 public class QuantityMeasurement {
 
     private double feetUnitValue;
+    private double inchUnitValue;
+
 
     public static void main(String[] args) {
         System.out.println("/**************************/ WELCOME TO QUANTITY MEASUREMENT /**************************/");
     }
 
-    //METHOD TO GET UNIT TYPE
+    //METHOD TO GET FEET LENGTH
     public double getFeetValue(double feetValue) {
         this.feetUnitValue = feetValue;
         return feetUnitValue;
+    }
+
+    //METHOD TO GET INCH LENGTH
+    public double getInchValue(double inchLength) {
+        this.inchUnitValue = inchLength;
+        return inchUnitValue;
     }
 
     @Override
@@ -24,7 +32,7 @@ public class QuantityMeasurement {
             return false;
         if (this.getClass() == o.getClass())
             return true;
-        if(o.equals(o))
+        if (o.equals(o))
             return true;
         QuantityMeasurement that = (QuantityMeasurement) o;
         return Double.compare(that.feetUnitValue, feetUnitValue) == 0;
@@ -35,3 +43,4 @@ public class QuantityMeasurement {
         return Objects.hash(feetUnitValue);
     }
 }
+
