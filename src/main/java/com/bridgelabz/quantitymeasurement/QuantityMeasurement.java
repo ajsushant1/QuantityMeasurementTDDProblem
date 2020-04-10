@@ -13,14 +13,14 @@ public class QuantityMeasurement {
     }
 
     //METHOD TO GET FEET LENGTH
-    public double getFeetValue(double feetValue) {
-        this.feetUnitValue = feetValue;
+    public double getFeetValue(double feetLength) {
+        this.feetUnitValue = feetLength * 12;
         return feetUnitValue;
     }
 
     //METHOD TO GET INCH LENGTH
     public double getInchValue(double inchLength) {
-        this.inchUnitValue = inchLength;
+        this.inchUnitValue = inchLength * 1;
         return inchUnitValue;
     }
 
