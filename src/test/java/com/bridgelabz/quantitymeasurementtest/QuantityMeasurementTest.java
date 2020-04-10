@@ -109,9 +109,16 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given1InchAnd1Feet_ShouldReturnEqual() {
+    public void given1InchAnd1Feet_ShouldReturnNotEqual() {
         double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH,1);
         double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET,1);
         Assert.assertNotEquals(inchValue,feetValue,0);
     }
+    @Test
+    public void given1FeetAnd1Feet_ShouldReturnEqual() {
+        double inchValue = quantityMeasurement.getConversionValue(UnitType.FEET,1);
+        double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET,1);
+        Assert.assertEquals(inchValue,feetValue,0);
+    }
+
 }
