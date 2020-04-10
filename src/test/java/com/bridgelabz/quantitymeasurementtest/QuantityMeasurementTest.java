@@ -86,9 +86,16 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given1FeetAnd12Inch_ShouldReturnTrue() {
+    public void given1FeetAnd12Inch_ShouldReturnEqual() {
         double feetValue = quantityMeasurement.getFeetValue(1);
         double inchValue = quantityMeasurement.getInchValue(12);
         Assert.assertEquals(feetValue,inchValue,0);
+    }
+
+    @Test
+    public void given1FeetAnd1Inch_ShouldReturnNotEqual() {
+        double feetValue = quantityMeasurement.getFeetValue(1);
+        double inchValue = quantityMeasurement.getInchValue(1);
+        Assert.assertNotEquals(feetValue,inchValue,0);
     }
 }
