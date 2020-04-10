@@ -200,4 +200,19 @@ public class QuantityMeasurementTest {
         double quantity = quantityMeasurement.addQuantity(feetValue, inchValue);
         Assert.assertEquals(14,quantity,0);
     }
+
+    @Test
+    public void given1FeetAnd1Feet_ShouldReturn24Inch() {
+        double feetValue1 = quantityMeasurement.getConversionValue(UnitType.FEET, 1);
+        double feetValue2 = quantityMeasurement.getConversionValue(UnitType.FEET, 1);
+        double quantity = quantityMeasurement.addQuantity(feetValue1,feetValue2);
+    }
+
+    @Test
+    public void givenInchAndCentimeter_ShouldReturn3Inch() {
+        double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH, 2);
+        double centimeterValue = quantityMeasurement.getConversionValue(UnitType.CENTIMETER, 2.5);
+        double quantity = quantityMeasurement.addQuantity(inchValue, centimeterValue);
+        Assert.assertEquals(3,quantity,0);
+    }
 }
