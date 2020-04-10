@@ -170,4 +170,11 @@ public class QuantityMeasurementTest {
         double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET, 3);
         Assert.assertEquals(yardValue, feetValue, 0);
     }
+
+    @Test
+    public void givenInchAndCentimeterLength_ShouldReturnEqual() {
+        double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH, 1);
+        double centimeterValue = quantityMeasurement.getConversionValue(UnitType.CENTIMETER, 2.5);
+        Assert.assertEquals(inchValue,centimeterValue,0);
+    }
 }
