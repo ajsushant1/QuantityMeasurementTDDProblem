@@ -15,7 +15,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenFeetNonZeroValue_ShouldReturnEqual() {
+    public void givenDifferentFeetValue_ShouldReturnNotEqual() {
         double value1 = quantityMeasurement.getFeetValue(0.0);
         double value2 = quantityMeasurement.getFeetValue(5.0);
         Assert.assertNotEquals(value1, value2, 0);
@@ -51,5 +51,12 @@ public class QuantityMeasurementTest {
         double inchValue1 = quantityMeasurement.getInchValue(0.0);
         double inchValue2 = quantityMeasurement.getInchValue(0.0);
         Assert.assertEquals(inchValue1,inchValue2,0);
+    }
+
+    @Test
+    public void givenDifferentInchValue_ShouldReturnNotEqual() {
+        double inchValue1 = quantityMeasurement.getInchValue(1.0);
+        double inchValue2 = quantityMeasurement.getInchValue(5.0);
+        Assert.assertNotEquals(inchValue1, inchValue2, 0);
     }
 }
