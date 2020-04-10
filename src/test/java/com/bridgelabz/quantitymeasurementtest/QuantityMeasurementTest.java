@@ -246,4 +246,11 @@ public class QuantityMeasurementTest {
         double quantity = quantityMeasurement.addQuantity(litreValue, millilitreValue);
         Assert.assertEquals(2, quantity, 0);
     }
+
+    @Test
+    public void givenWeightsKgAndGrams_ShouldReturnEqual() {
+        double kgValue = quantityMeasurement.getConversionValue(UnitType.KILOGRAM, 1);
+        double gramValue = quantityMeasurement.getConversionValue(UnitType.GRAMS, 1000);
+        Assert.assertEquals(kgValue, gramValue, 0);
+    }
 }
