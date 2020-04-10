@@ -143,4 +143,10 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(feetValue, yardValue, 0);
     }
 
+    @Test
+    public void given1inchAnd1Yard_ShouldReturnNotEqual() {
+        double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH, 1);
+        double yardValue = quantityMeasurement.getConversionValue(UnitType.YARD, 1);
+        Assert.assertNotEquals(inchValue, yardValue, 0);
+    }
 }
