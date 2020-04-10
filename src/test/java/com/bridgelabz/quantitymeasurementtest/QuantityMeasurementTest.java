@@ -84,4 +84,11 @@ public class QuantityMeasurementTest {
         boolean equals = quantityMeasurement.equals(value);
         Assert.assertTrue(equals);
     }
+
+    @Test
+    public void given1FeetAnd12Inch_ShouldReturnTrue() {
+        double feetValue = quantityMeasurement.getFeetValue(1);
+        double inchValue = quantityMeasurement.getInchValue(12);
+        Assert.assertEquals(feetValue,inchValue,0);
+    }
 }
