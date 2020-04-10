@@ -177,4 +177,11 @@ public class QuantityMeasurementTest {
         double centimeterValue = quantityMeasurement.getConversionValue(UnitType.CENTIMETER, 2.5);
         Assert.assertEquals(inchValue,centimeterValue,0);
     }
+
+    @Test
+    public void given2InchAnd5CentimeterLength_ShouldReturnEqual() {
+        double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH, 2);
+        double centimeterValue = quantityMeasurement.getConversionValue(UnitType.CENTIMETER, 5);
+        Assert.assertEquals(inchValue,centimeterValue,0);
+    }
 }
