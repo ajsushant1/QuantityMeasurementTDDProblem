@@ -33,7 +33,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenType_WhenEqual_ShouldReturnTrue() {
+    public void givenFeetObjectType_WhenEqual_ShouldReturnTrue() {
         QuantityMeasurement measurement1 = new QuantityMeasurement();
         QuantityMeasurement measurement2 = new QuantityMeasurement();
         Assert.assertEquals(measurement1, measurement2);
@@ -69,5 +69,12 @@ public class QuantityMeasurementTest {
     public void givenSameReferenceToInch_WhenEqual_ShouldReturnTrue() {
         boolean equals = quantityMeasurement.equals(quantityMeasurement);
         Assert.assertTrue(equals);
+    }
+
+    @Test
+    public void givenInchObjectType_WhenEqual_ShouldReturnTrue() {
+        QuantityMeasurement measurement1 = new QuantityMeasurement();
+        QuantityMeasurement measurement2 = new QuantityMeasurement();
+        Assert.assertEquals(measurement1, measurement2);
     }
 }
