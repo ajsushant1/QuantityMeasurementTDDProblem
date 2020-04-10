@@ -253,4 +253,11 @@ public class QuantityMeasurementTest {
         double gramValue = quantityMeasurement.getConversionValue(UnitType.GRAMS, 1000);
         Assert.assertEquals(kgValue, gramValue, 0);
     }
+
+    @Test
+    public void givenWeightsTonneAndKgs_ShouldReturnEqual() {
+        double tonneValue = quantityMeasurement.getConversionValue(UnitType.TONNE, 1);
+        double kgValue = quantityMeasurement.getConversionValue(UnitType.KILOGRAM, 1000);
+        Assert.assertEquals(tonneValue, kgValue, 0);
+    }
 }
