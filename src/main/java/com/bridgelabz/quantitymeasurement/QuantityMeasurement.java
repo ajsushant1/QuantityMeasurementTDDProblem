@@ -12,7 +12,7 @@ public class QuantityMeasurement {
 
     //METHOD TO GET FEET LENGTH
     public double getConversionValue(UnitType unitType, double unitValue) {
-        this.conversionValue = unitType.conversionUnit * unitValue;
+        this.conversionValue = unitType.conversionUnitValue * unitValue;
         return conversionValue;
     }
 
@@ -33,6 +33,10 @@ public class QuantityMeasurement {
     @Override
     public int hashCode() {
         return Objects.hash(conversionValue);
+    }
+
+    public double addQuantity(double quantity1, double quantity2) {
+        return quantity1 + quantity2;
     }
 }
 
