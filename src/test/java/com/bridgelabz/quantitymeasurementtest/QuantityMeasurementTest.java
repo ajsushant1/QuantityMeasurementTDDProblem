@@ -129,5 +129,10 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(inchValue1, inchValue2, 0);
     }
 
-
+    @Test
+    public void given3FeetAnd1Yard_ShouldReturnEqual() {
+        double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET, 3);
+        double yardValue = quantityMeasurement.getConversionValue(UnitType.YARD, 1);
+        Assert.assertEquals(feetValue,yardValue,0);
+    }
 }
