@@ -77,4 +77,11 @@ public class QuantityMeasurementTest {
         QuantityMeasurement measurement2 = new QuantityMeasurement();
         Assert.assertEquals(measurement1, measurement2);
     }
+
+    @Test
+    public void givenSameValueToInch_WhenEqual_ShouldReturnEqual() {
+        int value = 10;
+        boolean equals = quantityMeasurement.equals(value);
+        Assert.assertTrue(equals);
+    }
 }
