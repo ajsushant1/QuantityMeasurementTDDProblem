@@ -98,4 +98,11 @@ public class QuantityMeasurementTest {
         double inchValue = quantityMeasurement.getInchValue(1);
         Assert.assertNotEquals(feetValue,inchValue,0);
     }
+
+    @Test
+    public void given0FeetAnd0Inch_ShouldReturnEqual() {
+        double feetValue = quantityMeasurement.getFeetValue(0);
+        double inchValue = quantityMeasurement.getInchValue(0);
+        Assert.assertEquals(feetValue,inchValue,0);
+    }
 }
