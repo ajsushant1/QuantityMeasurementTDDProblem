@@ -217,9 +217,16 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenGallonAndLitreVolume_ShouldReturnEqual() {
+    public void givenVolumesGallonAndLitre_ShouldReturnEqual() {
         double gallonValue = quantityMeasurement.getConversionValue(UnitType.GALLON, 1);
         double litreValue = quantityMeasurement.getConversionValue(UnitType.LITRE, 3.78);
         Assert.assertEquals(gallonValue, litreValue, 0);
+    }
+
+    @Test
+    public void givenVolumesLitreAndMillilitre_ShouldReturnEqual() {
+        double litreValue = quantityMeasurement.getConversionValue(UnitType.LITRE, 1);
+        double millilitreValue = quantityMeasurement.getConversionValue(UnitType.MILLILITRE, 1000);
+        Assert.assertEquals(litreValue,millilitreValue,0);
     }
 }
