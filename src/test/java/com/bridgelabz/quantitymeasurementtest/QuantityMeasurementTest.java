@@ -1,6 +1,7 @@
 package com.bridgelabz.quantitymeasurementtest;
 
 import com.bridgelabz.quantitymeasurement.QuantityMeasurement;
+import com.bridgelabz.quantitymeasurement.UnitType;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,15 +10,15 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenZeroFeet_ShouldReturnEqual() {
-        double value1 = quantityMeasurement.getFeetValue(0.0);
-        double value2 = quantityMeasurement.getFeetValue(0.0);
+        double value1 = quantityMeasurement.getConversionValue(UnitType.FEET,0.0);
+        double value2 = quantityMeasurement.getConversionValue(UnitType.FEET,0.0);
         Assert.assertEquals(value1, value2, 0);
     }
 
     @Test
     public void givenDifferentFeetValue_ShouldReturnNotEqual() {
-        double value1 = quantityMeasurement.getFeetValue(0.0);
-        double value2 = quantityMeasurement.getFeetValue(5.0);
+        double value1 = quantityMeasurement.getConversionValue(UnitType.FEET,0.0);
+        double value2 = quantityMeasurement.getConversionValue(UnitType.FEET,5.0);
         Assert.assertNotEquals(value1, value2, 0);
     }
 
@@ -46,17 +47,18 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(equals);
     }
 
+    //FOR INCH
     @Test
     public void givenZeroInch_ShouldReturnEqual() {
-        double inchValue1 = quantityMeasurement.getInchValue(0.0);
-        double inchValue2 = quantityMeasurement.getInchValue(0.0);
+        double inchValue1 = quantityMeasurement.getConversionValue(UnitType.INCH,0.0);
+        double inchValue2 = quantityMeasurement.getConversionValue(UnitType.INCH,0.0);
         Assert.assertEquals(inchValue1, inchValue2, 0);
     }
 
     @Test
     public void givenDifferentInchValue_ShouldReturnNotEqual() {
-        double inchValue1 = quantityMeasurement.getInchValue(1.0);
-        double inchValue2 = quantityMeasurement.getInchValue(5.0);
+        double inchValue1 = quantityMeasurement.getConversionValue(UnitType.INCH,1.0);
+        double inchValue2 = quantityMeasurement.getConversionValue(UnitType.INCH,5.0);
         Assert.assertNotEquals(inchValue1, inchValue2, 0);
     }
 
@@ -87,22 +89,22 @@ public class QuantityMeasurementTest {
 
     @Test
     public void given1FeetAnd12Inch_ShouldReturnEqual() {
-        double feetValue = quantityMeasurement.getFeetValue(1);
-        double inchValue = quantityMeasurement.getInchValue(12);
+        double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET,1);
+        double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH,12);
         Assert.assertEquals(feetValue,inchValue,0);
     }
 
     @Test
     public void given1FeetAnd1Inch_ShouldReturnNotEqual() {
-        double feetValue = quantityMeasurement.getFeetValue(1);
-        double inchValue = quantityMeasurement.getInchValue(1);
+        double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET,1);
+        double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH,1);
         Assert.assertNotEquals(feetValue,inchValue,0);
     }
 
     @Test
     public void given0FeetAnd0Inch_ShouldReturnEqual() {
-        double feetValue = quantityMeasurement.getFeetValue(0);
-        double inchValue = quantityMeasurement.getInchValue(0);
+        double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET,0);
+        double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH,0);
         Assert.assertEquals(feetValue,inchValue,0);
     }
 }

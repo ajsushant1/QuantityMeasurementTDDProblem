@@ -4,24 +4,16 @@ import java.util.Objects;
 
 public class QuantityMeasurement {
 
-    private double feetUnitValue;
-    private double inchUnitValue;
-
+    private double conversionValue;
 
     public static void main(String[] args) {
         System.out.println("/**************************/ WELCOME TO QUANTITY MEASUREMENT /**************************/");
     }
 
     //METHOD TO GET FEET LENGTH
-    public double getFeetValue(double feetLength) {
-        this.feetUnitValue = feetLength * 12;
-        return feetUnitValue;
-    }
-
-    //METHOD TO GET INCH LENGTH
-    public double getInchValue(double inchLength) {
-        this.inchUnitValue = inchLength * 1;
-        return inchUnitValue;
+    public double getConversionValue(UnitType unitType, double unitValue) {
+        this.conversionValue = unitType.conversionUnit * unitValue;
+        return conversionValue;
     }
 
     @Override
@@ -35,12 +27,12 @@ public class QuantityMeasurement {
         if (o.equals(o))
             return true;
         QuantityMeasurement that = (QuantityMeasurement) o;
-        return Double.compare(that.feetUnitValue, feetUnitValue) == 0;
+        return Double.compare(that.conversionValue, conversionValue) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(feetUnitValue);
+        return Objects.hash(conversionValue);
     }
 }
 
