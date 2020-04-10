@@ -22,7 +22,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenNullValueToEqual_ShouldReturnFalse() {
+    public void givenNullValueToFeet_ShouldReturnFalse() {
         Assert.assertFalse(quantityMeasurement.equals(null));
     }
 
@@ -50,7 +50,7 @@ public class QuantityMeasurementTest {
     public void givenZeroInch_ShouldReturnEqual() {
         double inchValue1 = quantityMeasurement.getInchValue(0.0);
         double inchValue2 = quantityMeasurement.getInchValue(0.0);
-        Assert.assertEquals(inchValue1,inchValue2,0);
+        Assert.assertEquals(inchValue1, inchValue2, 0);
     }
 
     @Test
@@ -59,4 +59,10 @@ public class QuantityMeasurementTest {
         double inchValue2 = quantityMeasurement.getInchValue(5.0);
         Assert.assertNotEquals(inchValue1, inchValue2, 0);
     }
+
+    @Test
+    public void givenNullValueToInch_ShouldReturnFalse() {
+        Assert.assertFalse(quantityMeasurement.equals(null));
+    }
+
 }
