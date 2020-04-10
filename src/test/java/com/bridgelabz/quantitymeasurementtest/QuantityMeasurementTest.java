@@ -133,6 +133,14 @@ public class QuantityMeasurementTest {
     public void given3FeetAnd1Yard_ShouldReturnEqual() {
         double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET, 3);
         double yardValue = quantityMeasurement.getConversionValue(UnitType.YARD, 1);
-        Assert.assertEquals(feetValue,yardValue,0);
+        Assert.assertEquals(feetValue, yardValue, 0);
     }
+
+    @Test
+    public void given1FeetAnd1Yard_ShouldReturnNotEqual() {
+        double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET, 1);
+        double yardValue = quantityMeasurement.getConversionValue(UnitType.YARD, 1);
+        Assert.assertNotEquals(feetValue, yardValue, 0);
+    }
+
 }
