@@ -260,4 +260,20 @@ public class QuantityMeasurementTest {
         double kgValue = quantityMeasurement.getConversionValue(UnitType.KILOGRAM, 1000);
         Assert.assertEquals(tonneValue, kgValue, 0);
     }
+
+    @Test
+    public void givenWeightsTonneAndGrams_WhenAdd_ShouldReturnAddition() {
+        double tonneValue = quantityMeasurement.getConversionValue(UnitType.TONNE, 1);
+        double gramValue = quantityMeasurement.getConversionValue(UnitType.GRAMS, 1000);
+        double quantity = quantityMeasurement.addQuantity(tonneValue, gramValue);
+        Assert.assertEquals(1001,quantity,0);
+    }
+
+    @Test
+    public void givenWeightsKgAndGrams_WhenAdd_ShouldReturnAddition() {
+        double kgValue = quantityMeasurement.getConversionValue(UnitType.KILOGRAM, 1);
+        double gramValue = quantityMeasurement.getConversionValue(UnitType.GRAMS, 1000);
+        double quantity = quantityMeasurement.addQuantity(kgValue, gramValue);
+        Assert.assertEquals(2,quantity,0);
+    }
 }
