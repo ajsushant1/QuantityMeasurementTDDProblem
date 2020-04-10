@@ -192,4 +192,12 @@ public class QuantityMeasurementTest {
         double quantity = quantityMeasurement.addQuantity(inchValue1, inchValue2);
         Assert.assertEquals(4,quantity,0);
     }
+
+    @Test
+    public void given1FeetAnd2Inch_ShouldReturn14Inch() {
+        double feetValue = quantityMeasurement.getConversionValue(UnitType.FEET, 1);
+        double inchValue = quantityMeasurement.getConversionValue(UnitType.INCH, 2);
+        double quantity = quantityMeasurement.addQuantity(feetValue, inchValue);
+        Assert.assertEquals(14,quantity,0);
+    }
 }
