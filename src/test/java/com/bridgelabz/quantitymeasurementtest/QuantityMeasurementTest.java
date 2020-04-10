@@ -45,4 +45,11 @@ public class QuantityMeasurementTest {
         boolean equals = quantityMeasurement.equals(value);
         Assert.assertTrue(equals);
     }
+
+    @Test
+    public void givenZeroInch_ShouldReturnEqual() {
+        double inchValue1 = quantityMeasurement.getInchValue(0.0);
+        double inchValue2 = quantityMeasurement.getInchValue(0.0);
+        Assert.assertEquals(inchValue1,inchValue2,0);
+    }
 }
