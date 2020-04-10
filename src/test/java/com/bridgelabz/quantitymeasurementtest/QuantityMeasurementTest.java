@@ -206,7 +206,7 @@ public class QuantityMeasurementTest {
         double feetValue1 = quantityMeasurement.getConversionValue(UnitType.FEET, 1);
         double feetValue2 = quantityMeasurement.getConversionValue(UnitType.FEET, 1);
         double quantity = quantityMeasurement.addQuantity(feetValue1, feetValue2);
-        Assert.assertEquals(24,quantity,0);
+        Assert.assertEquals(24, quantity, 0);
     }
 
     @Test
@@ -228,7 +228,7 @@ public class QuantityMeasurementTest {
     public void givenVolumesLitreAndMillilitre_ShouldReturnEqual() {
         double litreValue = quantityMeasurement.getConversionValue(UnitType.LITRE, 1);
         double millilitreValue = quantityMeasurement.getConversionValue(UnitType.MILLILITRE, 1000);
-        Assert.assertEquals(litreValue,millilitreValue,0);
+        Assert.assertEquals(litreValue, millilitreValue, 0);
     }
 
     @Test
@@ -236,6 +236,14 @@ public class QuantityMeasurementTest {
         double gallonValue = quantityMeasurement.getConversionValue(UnitType.GALLON, 1);
         double litreValue = quantityMeasurement.getConversionValue(UnitType.LITRE, 3.78);
         double quantity = quantityMeasurement.addQuantity(gallonValue, litreValue);
-        Assert.assertEquals(7.56,quantity,0);
+        Assert.assertEquals(7.56, quantity, 0);
+    }
+
+    @Test
+    public void givenVolumesLitreAndMillilitre_WhenAdd_ShouldReturnAddition() {
+        double litreValue = quantityMeasurement.getConversionValue(UnitType.LITRE, 1);
+        double millilitreValue = quantityMeasurement.getConversionValue(UnitType.MILLILITRE, 1000);
+        double quantity = quantityMeasurement.addQuantity(litreValue, millilitreValue);
+        Assert.assertEquals(2, quantity, 0);
     }
 }
