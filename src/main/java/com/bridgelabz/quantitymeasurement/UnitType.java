@@ -5,7 +5,7 @@ public enum UnitType {
 
     public double conversionUnitValue;
 
-    UnitType(double conversionUnit) {
+    UnitType(double conversionUnitValue) {
         this.conversionUnitValue = conversionUnitValue;
     }
 
