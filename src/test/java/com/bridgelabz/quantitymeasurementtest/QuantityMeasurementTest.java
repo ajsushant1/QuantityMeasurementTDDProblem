@@ -276,4 +276,18 @@ public class QuantityMeasurementTest {
         double quantity = quantityMeasurement.addQuantity(kgValue, gramValue);
         Assert.assertEquals(2,quantity,0);
     }
+
+    @Test
+    public void givenTemperature0_WhenCompare_ShouldReturnEqual() {
+        double temperature1 = quantityMeasurement.getConversionValue(UnitType.CELSIUS, 0);
+        double temperature2 = quantityMeasurement.getConversionValue(UnitType.CELSIUS, 0);
+        Assert.assertEquals(temperature1,temperature2,0);
+    }
+
+    @Test
+    public void givenTemperature_WhenCompare_ShouldReturnEqual() {
+        double temperature1 = quantityMeasurement.getConversionValue(UnitType.FAHRENHEIT, 212);
+        double temperature2 = quantityMeasurement.getConversionValue(UnitType.CELSIUS, 100);
+        Assert.assertEquals(temperature1,temperature2,0);
+    }
 }
