@@ -10,7 +10,7 @@ public class QuantityMeasurement {
         System.out.println("/**************************/ WELCOME TO QUANTITY MEASUREMENT /**************************/");
     }
 
-    //METHOD TO GET FEET LENGTH
+    //METHOD TO GET CONVERSION
     public double getConversionValue(UnitType unitType, double unitValue) {
         if (unitType.equals(UnitType.CELSIUS)) {
             this.conversionValue = (unitType.conversionUnitValue * unitValue) + 32;
@@ -39,6 +39,7 @@ public class QuantityMeasurement {
         return Objects.hash(conversionValue);
     }
 
+    //METHOD TO GET ADDITION
     public double addQuantity(double quantity1, double quantity2) {
         return quantity1 + quantity2;
     }
