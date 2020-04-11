@@ -12,6 +12,10 @@ public class QuantityMeasurement {
 
     //METHOD TO GET FEET LENGTH
     public double getConversionValue(UnitType unitType, double unitValue) {
+        if (unitType.equals(UnitType.CELSIUS)) {
+            this.conversionValue = (unitType.conversionUnitValue * unitValue) + 32;
+            return conversionValue;
+        }
         this.conversionValue = unitType.conversionUnitValue * unitValue;
         return conversionValue;
     }
