@@ -1,15 +1,15 @@
 package com.bridgelabz.quantitymeasurement;
 
 public enum UnitType {
-    FEET(12), INCH(1), YARD(36), CENTIMETER(0.4),
-    GALLON(3.78), LITRE(1), MILLILITRE(0.001),
-    KILOGRAM(1), GRAMS(0.001), TONNE(1000),
-    FAHRENHEIT(1), CELSIUS(1.8);
+    FEET(UnitEntity.LENGTH), INCH(UnitEntity.LENGTH), YARD(UnitEntity.LENGTH), CENTIMETER(UnitEntity.LENGTH),
+    GALLON(UnitEntity.VOLUME), LITRE(UnitEntity.VOLUME), MILLILITRE(UnitEntity.VOLUME),
+    KILOGRAM(UnitEntity.WEIGHT), GRAMS(UnitEntity.WEIGHT), TONNE(UnitEntity.WEIGHT),
+    FAHRENHEIT(UnitEntity.TEMPERATURE), CELSIUS(UnitEntity.TEMPERATURE);
 
-    public double conversionUnitValue;
+    UnitEntity unitEntity;
 
-    UnitType(double conversionUnitValue) {
-        this.conversionUnitValue = conversionUnitValue;
+    UnitType(UnitEntity unitEntity) {
+        this.unitEntity = unitEntity;
     }
 
 }
